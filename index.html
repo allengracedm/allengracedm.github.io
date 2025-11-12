@@ -4,99 +4,206 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ITo Ako</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #000000, #2b2b2b);
+      font-family: 'Inter', sans-serif;
+      color: #f5f5f5;
+      scroll-behavior: smooth;
+    }
 
-    <style>
-      body {
-        background: linear-gradient(135deg, #000000, #1a1a1a, #2b2b2b);
-        color: #f0f0f0;
-        font-family: 'Poppins', sans-serif;
-        min-height: 100vh;
-      }
+    .navbar {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-      /*Navigation*/
-      .navbar {
-        background: transparent;
-        padding: 1rem 2rem;
-      }
-      .navbar-brand {
-        color: #f8f8f8;
-        font-weight: 600;
-        letter-spacing: 2px;
-      }
-      .navbar-nav a {
-        color: #cfcfcf;
-        margin-left: 20px;
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.2s ease;
-      }
-      .navbar-nav a:hover {
-        color: #ffd166; 
-      }
+   .navbar h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    font-size: 1.7rem;
+    }
 
-      /*Hero*/
-      .hero {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
-      .hero img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        margin-bottom: 20px;
-        box-shadow: 0 0 15px rgba(255, 209, 102, 0.2);
-      }
-      .hero h1 {
-        font-size: 1.8rem;
-        color:#f2b705; 
-        font-weight: 600;
-        margin-bottom: 10px;
-      }
-      .hero pre {
-        font-size: 1rem;
-        color: #bfbfbf;
-        margin-bottom: 25px;
-      }
-      .hero a {
-        color: #9db2ff;
-        text-decoration: none;
-        font-size: 0.95rem;
-      }
-      .hero a:hover {
-        text-decoration: underline;
-        color: #c6d0ff;
-      }
-    </style>
-  </head>
+    .navbar .nav-link {
+      font-family: 'Rockwell';
+      color: white;
+      font-size: 1.2rem;
+      margin-left: auto;
+    }
 
+    .hero {
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 20px;
+      padding: 60px 40px;
+      margin-top: 100px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    .hero p {
+      color: #ccc;
+      font-size: 1.1rem;
+      margin-top: 15px;
+    }
+
+    .about {
+      margin-top: 100px;
+      text-align: center;
+    }
+
+    .tech-logos img {
+      width: 60px;
+      margin: 15px;
+      filter: brightness(0.9);
+      transition: transform 0.2s;
+    }
+
+    .tech-logos img:hover {
+      transform: scale(1.1);
+    }
+
+    .about p {
+      color: #f7f2f2;
+      max-width: 700px;
+      margin: 20px auto;
+      line-height: 1.6;
+    }
+
+    .activities {
+      margin-top: 100px;
+    }
+
+    .activities p{
+      color: white;
+    }
+
+    .activities h5{
+      color: white;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      margin-top: 100px;
+      text-align: center;
+      padding: 30px 0;
+      background: rgba(255, 255, 255, 0.05);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    footer a {
+      color: #bbb;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
   <body>
-    <!--Navigation-->
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">ITo Ako</a>
-        <div class="navbar-nav ms-auto">
-          <a href="#">Home</a>
-          <a href="#">Skills</a>
-          <a href="#">Contact Me</a>
+     <!-- Navbar -->
+   <nav class="navbar sticky-top navbar-expand-lg">
+    <div class="container-fluid shadow-sm">
+      <a class="navbar-brand m-2 p-3" href="#"></a>
+      <h2>ITo Ako</h2>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto m-2 p-3">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#activities">Activities</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero container" id="hero">
+    <h1>Hi, I'm Allen</h1>
+    <p>
+      I'm a college student passionate about learning web development and technology.  
+      Although I’m still exploring this field, I’m eager to grow, create, and gain experience through every small project I work on.
+    </p>
+  </section>
+
+  <!-- About Me -->
+  <section class="about container" id="about" style="scroll-margin-top: 120px;">
+    <h2 class="fw-bold mb-4">About Me</h2>
+    <div class="tech-logos">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">
+    </div>
+    <p>
+      I enjoy learning how websites work and how design and logic connect.  
+      My current focus is strengthening my skills in front-end development while also exploring backend concepts.  
+      I believe in continuous learning and every project is a new chance to improve.
+    </p>
+  </section>
+
+  <!-- Activities -->
+  <section class="activities container" id="activities" style="scroll-margin-top: 115px;" >
+    <h2 class="fw-bold mb-4 text-center">My Activities</h2>
+    <div class="row justify-content-center align-items-stretch">      
+      <div class="col-md-5 mb-4 d-flex">
+        <div class="card p-4 text-center h-100 w-100 d-flex flex-column justify-content-between">
+          <img src="assets/Front.jpg" class="img-fluid rounded shadow" alt="Samsung TV">
+           <div class="card-body d-flex flex-column"></div>
+           <h5>Activity 4</h5>
+           <p>Showcasing the 75" QLED 4K QEF1 Samsung Vision AI Smart TV (2025) — a sleek product layout demonstrating the balance of design, detail, and visual appeal.</p>          
+           <a href="https://allengracedm.github.io/Smart-TV/" target="_blank" class="btn btn-outline-light btn-sm mt-2">View Activity</a>
         </div>
       </div>
-    </nav>
+      <div class="col-md-5 mb-4 d-flex">
+        <div class="card p-4 text-center h-100 w-100 d-flex flex-column justify-content-between">
+        <img src="assets/photo 1.jpg" class="img-fluid rounded shadow" alt="Batanes">
+         <div class="card-body d-flex flex-column"></div>
+         <h5>Activity 5</h5>
+         <p>Capturing the beauty and calmness of Batanes — a web showcase combining simple layout and gentle color tones to reflect peace and serenity.</p>          
+         <a href="https://allengracedm.github.io/Batanes/" target="_blank" class="btn btn-outline-light btn-sm mt-2">View Activity</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!--Hero-->
-    <section class="hero">
-      <img src="formal.jpg" alt="My Picture">
-      <h1>I am an IT Student</h1>
-      <pre>I’m focused on understanding how systems, design, and code work together to create useful solutions. 
-        I may still be learning, but I’m eager to improve, explore new technologies, and 
-        take every challenge as an opportunity to grow.</pre>
-      <a href="#">Get to know <span style="text-decoration: underline;">Me</span></a>
-    </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Footer -->
+  <footer>
+    <p>Contact me:</p>
+    <a href="mailto:manaigallen26@gmail.com">Email</a> |
+    <a href="https://github.com/allengracedm" target="_blank">GitHub</a> 
+    <p class="mt-3 small text-secondary">© 2025 ITo Ako. All rights reserved.</p>
+  </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>
